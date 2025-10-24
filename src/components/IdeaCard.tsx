@@ -25,7 +25,7 @@ export const IdeaCard = ({
       </div>
       
       <div className="relative z-10 min-h-[200px] flex items-center justify-center">
-        <p className="text-sm md:text-base font-bold leading-relaxed text-center max-w-2xl lg:text-base text-purple-900">
+        <p className="text-sm md:text-base font-bold leading-relaxed text-center max-w-2xl lg:text-base text-purple-300">
           {idea}
         </p>
       </div>
