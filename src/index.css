@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --font-pixel: 'Press Start 2P', cursive;
+    
+    /* Minecraft-inspired earthy palette */
+    --background: 120 15% 85%;
+    --foreground: 30 25% 20%;
+
+    --card: 30 20% 92%;
+    --card-foreground: 30 25% 20%;
+
+    --popover: 30 20% 92%;
+    --popover-foreground: 30 25% 20%;
+
+    --primary: 120 35% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 30% 70%;
+    --secondary-foreground: 30 25% 20%;
+
+    --muted: 40 20% 80%;
+    --muted-foreground: 30 15% 40%;
+
+    --accent: 25 45% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 20% 70%;
+    --input: 30 20% 70%;
+    --ring: 120 35% 45%;
+
+    --radius: 0;
+
+    /* Category colors - Minecraft themed */
+    --category-art: 280 40% 55%;
+    --category-startup: 200 30% 50%;
+    --category-design: 30 55% 50%;
+
+    /* Gradients - Natural earthy tones */
+    --gradient-primary: linear-gradient(135deg, hsl(120 35% 45%) 0%, hsl(90 30% 40%) 100%);
+    --gradient-art: linear-gradient(135deg, hsl(280 40% 55%) 0%, hsl(260 35% 50%) 100%);
+    --gradient-startup: linear-gradient(135deg, hsl(200 30% 50%) 0%, hsl(210 35% 45%) 100%);
+    --gradient-design: linear-gradient(135deg, hsl(30 55% 50%) 0%, hsl(25 50% 45%) 100%);
+    
+    /* Shadows */
+    --shadow-glow: 0 10px 40px -10px hsl(120 35% 45% / 0.3);
+    --shadow-card: 0 4px 20px -2px hsl(30 25% 20% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Minecraft dark mode - night/cave atmosphere */
+    --background: 210 20% 18%;
+    --foreground: 40 15% 85%;
+
+    --card: 210 15% 22%;
+    --card-foreground: 40 15% 85%;
+
+    --popover: 210 15% 22%;
+    --popover-foreground: 40 15% 85%;
+
+    --primary: 120 40% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 20% 30%;
+    --secondary-foreground: 40 15% 85%;
+
+    --muted: 210 15% 30%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 25 50% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 35%;
+    --input: 210 15% 35%;
+    --ring: 120 40% 50%;
+
+    --shadow-glow: 0 10px 40px -10px hsl(120 40% 50% / 0.4);
+    --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.4);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-primary);
+    background-attachment: fixed;
+    font-family: var(--font-pixel);
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+}
+
+@layer utilities {
+  .animate-fade-scale {
+    animation: fadeScale 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes fadeScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
